@@ -5,21 +5,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "cars")
-public class Car {
+@Table(name = "engines")
+public class Engine {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "car_id")
-  private Long car_id;
+  @Column(name = "engine_id")
+  private Long engine_id;
 
-  @Column(name ="car_model")
-  private String car_model;
+  @Column(name = "engine_model")
+  private String engine_model;
 
-  @OneToOne(mappedBy = "car")
-  private Engine engine;
+  @OneToOne
+  @JoinColumn(name = "car_id_fk")
+  private Car car;
+
 }
