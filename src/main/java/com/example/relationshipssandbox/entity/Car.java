@@ -24,4 +24,5 @@ public class Car {
   @OneToOne
   @JoinColumn(name = "engine_id_fk")
   private Engine engine;
+
 }

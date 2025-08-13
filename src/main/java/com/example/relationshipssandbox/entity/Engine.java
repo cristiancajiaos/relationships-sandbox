@@ -21,6 +21,11 @@ public class Engine {
   @Column(name = "engine_model")
   private String engine_model;
 
+  @OneToOne
+  @JoinColumn(name = "engine_id_fk")
+  private Engine engine;
+
   @OneToOne(mappedBy = "engine")
   private Car car;
+
 }
