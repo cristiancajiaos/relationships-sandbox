@@ -19,7 +19,5 @@ public class Wheel {
   @Column(name = "wheel_id")
   private Long wheel_id;
 
-  @OneToMany
-  @JoinColumn(name = "car_id_fk")
-  private List<Car> car;
+
 }

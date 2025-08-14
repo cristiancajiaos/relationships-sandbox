@@ -21,4 +21,8 @@ public class Car {
 
   @Column(name = "car_model")
   private String car_model;
+
+  @OneToMany
+  @JoinColumn(name = "wheel_id_fk")
+  private List<Wheel> wheels;
 }
