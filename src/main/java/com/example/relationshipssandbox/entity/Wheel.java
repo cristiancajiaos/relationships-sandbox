@@ -20,6 +20,6 @@ public class Wheel {
   private Long wheel_id;
 
   @OneToMany
-  @JoinColumn(name = "card_id_fk")
+  @JoinColumn(name = "car_id_fk")
   private List<Car> car;
 }
