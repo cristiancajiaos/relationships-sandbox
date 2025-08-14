@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -21,6 +22,9 @@ public class Wheel {
   private Long wheel_id;
 
   @ManyToOne
-  @JoinColumn(name = "car_id_fk")
+  @JoinTable(
+      name = "car_wheel",
+      joinColumns = { @JoinColumn(name = "wheel_id_fk") },
+      inverseJoinColumns = { @JoinColumn(name = "car_id_fk")})
   private Car car;
 }
